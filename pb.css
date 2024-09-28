@@ -1,0 +1,55 @@
+/* Basic styling, customize as needed */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #de1313;
+    color: rgb(45, 182, 200);
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+.search form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+}
+
+.search label, .search input, .search button {
+    margin: 5px 0;
+}
+
+.results {
+    margin-top: 20px;
+}
+
+.bus {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.bus img {
+    max-width: 100px;
+    margin-right: 10px;
+}

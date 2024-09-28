@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking Website</title>
+    <link rel="stylesheet" href="pb.css">
+</head>
+<body>
+    <header>
+        <h1>Bhole Shanker Nagendra</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Book a Bus</a></li>
+                <li><a href="#">My Bookings</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="search">
+            <h2>India No.1 bus booking site</h2>
+            <form>
+                <label for="origin">Origin:</label>
+                <input type="text" id="origin" name="origin" required>
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+        <section class="results">
+            <h2>Search Results</h2>
+            <div class="bus">
+                <img src="bus1.jpg" alt="Bus 1">
+                <h3>Bus Company A</h3>
+                <p>Departure: 08:00 AM</p>
+                <button class="book-button">Book Now</button>
+            </div>
+            <div class="bus">
+                <img src="bus2.jpg" alt="Bus 2">
+                <h3>Bus Company B</h3>
+                <p>Departure: 10:00 AM</p>
+                <button class="book-button">Book Now</button>
+            </div>
+            <!-- More bus items here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Bus Booking Website</p>
+    </footer>
+    <script>
+        const searchForm = document.getElementById('searchForm');
+const resultsSection = document.getElementById('results');
+
+searchForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const origin = document.getElementById('origin').value;
+    const destination = document.getElementById('destination').value;
+    const date = document.getElementById('date').value;
+
+    // In a real scenario, you would fetch bus data from a server/database
+    const buses = [
+        { company: 'Bus Company A', departure: '08:00 AM', image: 'bus1.jpg' },
+        { company: 'Bus Company B', departure: '10:00 AM', image: 'bus2.jpg' }
+        // Add more bus data here
+    ];
+
+    displaySearchResults(buses);
+});
+
+function displaySearchResults(buses) {
+    resultsSection.innerHTML = '';
+
+    buses.forEach(bus => {
+        const busElement = document.createElement('div');
+        busElement.className = 'bus';
+        busElement.innerHTML = `
+            <img src="${bus.image}" alt="${bus.company}">
+            <div>
+                <h3>${bus.company}</h3>
+                <p>Departure: ${bus.departure}</p>
+                <button class="book-button">Book Now</button>
+            </div>
+        `;
+
+        resultsSection.appendChild(busElement);
+    });
+}
+
+    </script>
+</body>
+</html>
